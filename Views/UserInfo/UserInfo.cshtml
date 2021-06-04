@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.UserInfoTable
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<style>
+    .error{
+        color :red;
+    }
+</style>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>
+        User Information Form
+    </h1>
+    @using (Html.BeginForm("AddInfo", "UserInfo", FormMethod.Post))
+    {
+
+
+        <label>FirstName </label> <br />
+        @Html.ValidationMessageFor(x => x.firstname, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.firstname, new { @class = "form=control" }) <br /> <br />
+
+
+
+        <label>LastName</label> <br />
+        @Html.ValidationMessageFor(x => x.lastname, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.lastname, new { @class = "form=control" }) <br /> <br />
+
+
+
+        <label>Email </label> <br />
+        @Html.ValidationMessageFor(x => x.email, "", new { @class = "error" })
+        @Html.TextBoxFor(x => x.email, new { @class = "form=control" }) <br /> <br />
+
+
+
+        <button type="submit" class="btn btn-primary">
+            Submit
+        </button>
+
+
+
+
+
+
+
+
+
+    }
+</body>
+</html>
